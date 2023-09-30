@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" type="image/x-icon">
+    <title>Website Alert</title>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        function showMobileAlert() {
+            if (isMobileDevice()) {
+                alert("You are accessing this website from a mobile device. For the best experience, switch to desktop mode. ☺️");
+            }
+        }
+    </script>
+</head>
+<body onload="showMobileAlert()">
+    <header>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="../Home/index.html">Home</a>
+                <a href="./../About/index.html">About Us</a>
+                <a href="">Activity</a>
+                <a href="./../Team/index.html">Core Team!</a>
+                <a href="./../Join Us/index.html">Join Us</a>
+            </div>
+        </div>
+    </header>
+    <div class="news-container">
+        <div class="title">
+            Tasks
+        </div>
+        <ul>
+            <li>Poster Design</li>
+            <li>Cyber Challenges</li>
+            <li>Ethical Hacking tutorials</li>
+        </ul>
+    </div>
+    <section class="activity" id="activity">
+        <h1>Activities </h1>
+        <h2>Will Update soon. Till then Keep Patience! ☺️✌️</h2>
+    </section>
+
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        window.onscroll = () => {
+            menuBtn.classList.remove('active');
+            navigation.classList.remove('active');
+        }
+        
+        const btns = document.querySelectorAll(".nav-btn");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=> {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
